@@ -39,4 +39,16 @@ public class Kart : Agent
         action[1] = Input.GetKey(KeyCode.W) ? 1f : 0f;
       }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Checkpoint")
+        {
+            AddReward(1.0f);
+        }
+        else if (collision.collider.tag == "Wall")
+        {
+            AddReward(-0.1f);
+        }
+    }
+
 }
