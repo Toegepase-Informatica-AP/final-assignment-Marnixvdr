@@ -1,0 +1,24 @@
+{
+    "KartAgent": {
+        "checkpoints": [
+            {
+                "steps": 19456,
+                "file_path": "results\\ppo\\KartAgent\\KartAgent-19456.onnx",
+                "reward": null,
+                "creation_time": 1609751429.1451123
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 19456,
+            "file_path": "results\\ppo\\KartAgent.onnx",
+            "reward": null,
+            "creation_time": 1609751429.1451123
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.22.0",
+        "torch_version": "1.7.0",
+        "tensorflow_version": "2.3.1"
+    }
+}
