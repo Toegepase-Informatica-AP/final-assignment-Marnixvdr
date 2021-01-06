@@ -9,9 +9,11 @@ public class Kart : Agent
 {
 
    private KartController _kartController;
-   
+   private string LastCheckpoint;
+    public Transform ResetPoint = null;
 
-   public override void Initialize()
+
+    public override void Initialize()
    {
       _kartController = GetComponent<KartController>();
    }
@@ -19,9 +21,9 @@ public class Kart : Agent
 
    public override void OnEpisodeBegin()
    {
+        ResetCharacter();
 
-
-   }
+    }
 
       public override void OnActionReceived(ActionBuffers actions)
       {
@@ -41,14 +43,25 @@ public class Kart : Agent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Checkpoint")
+        if (collision.collider.tag == "Checkpoint" && collision.collider.name != LastCheckpoint)
         {
             AddReward(1.0f);
+            LastCheckpoint = collision.collider.name;
+            if (collision.collider.name == "Finish")
+            {
+                EndEpisode();
+            }
         }
         else if (collision.collider.tag == "Wall")
         {
             AddReward(-0.1f);
         }
     }
+
+    private void ResetCharacter()
+    {
+        this.transform.position = new Vector3(ResetPoint.position.x, ResetPoint.position.y, ResetPoint.position.z);
+    }
+
 
 }
