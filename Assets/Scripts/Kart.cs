@@ -1,8 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Unity.MLAgents;
+﻿using Unity.MLAgents;
 using Unity.MLAgents.Actuators;
-using Unity.MLAgents.Sensors;
 using UnityEngine;
 
 public class Kart : Agent
@@ -41,15 +38,15 @@ public class Kart : Agent
         action[1] = Input.GetAxis("Vertical");
         //action[1] = Input.GetKey(KeyCode.W) ? 1f : 0f;
 
-        if (_kartController.currentSpeed > 0f || _kartController.speed > 0f)
+        /*if (_kartController.currentSpeed > 0f || _kartController.speed > 0f)
         {
             EndEpisode();
-        }
+        }*/
        }
 
     private void OnTriggerEnter(Collider collision)
     {
-        AddReward(0.0001f);
+        //AddReward(0.0001f);
         if (collision.tag == "Checkpoint")
         {
             AddReward(1.0f);
@@ -58,12 +55,27 @@ public class Kart : Agent
         else if (collision.name == LastCheckpoint)
         {
             //AddReward(-1f);
+            //EndEpisode();
+        }
+        Debug.Log(GetCumulativeReward().ToString("f2"));
+    }
+
+    /*private void OnCollisionEnter(Collider collision)
+    {
+        AddReward(0.0001f);
+        if (collision.transform.CompareTag("Checkpoint"))
+        {
+            AddReward(1.0f);
+            LastCheckpoint = collision.name;
+        }
+        else if (collision.transform.CompareTag(LastCheckpoint))
+        {
+            //AddReward(-1f);
             EndEpisode();
         }
         Debug.Log(GetCumulativeReward().ToString("f2"));
 
-    }
-
+    }*/
 
 
     private void ResetCharacter()
