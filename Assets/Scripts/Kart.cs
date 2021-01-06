@@ -49,14 +49,15 @@ public class Kart : Agent
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.tag == "Checkpoint")
+        AddReward(0.0001f);
+        if (collision.tag == "Checkpoint")
         {
             AddReward(1.0f);
-            LastCheckpoint = collision.collider.name;
+            LastCheckpoint = collision.name;
         }
-        else if (collision.collider.name == LastCheckpoint)
+        else if (collision.name == LastCheckpoint)
         {
-            AddReward(-0.2f);
+            //AddReward(-1f);
             EndEpisode();
         }
         Debug.Log(GetCumulativeReward().ToString("f2"));
