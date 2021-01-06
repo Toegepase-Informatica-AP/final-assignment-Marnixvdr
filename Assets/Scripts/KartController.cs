@@ -14,8 +14,8 @@ public class KartController : MonoBehaviour
    public Transform kartNormal;
    public Rigidbody sphere;
    
-   float speed, currentSpeed;
-   float rotate, currentRotate;
+   public float speed, currentSpeed;
+   public float rotate, currentRotate;
 
    [Header("Parameters")]
    public float acceleration = 30f;
@@ -41,6 +41,7 @@ public class KartController : MonoBehaviour
       currentRotate = Mathf.Lerp(currentRotate, rotate, Time.deltaTime * 4f);
       rotate = 0f;
    }
+
 
    public void AnimateKart(float input)
    {

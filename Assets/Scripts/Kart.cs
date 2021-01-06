@@ -38,25 +38,32 @@ public class Kart : Agent
       {
         var action = actionsOut.ContinuousActions;
         action[0] = Input.GetAxis("Horizontal");
-        action[1] = Input.GetKey(KeyCode.W) ? 1f : 0f;
-      }
+        action[1] = Input.GetAxis("Vertical");
+        //action[1] = Input.GetKey(KeyCode.W) ? 1f : 0f;
 
-    private void OnCollisionEnter(Collision collision)
+        if (_kartController.currentSpeed > 0f || _kartController.speed > 0f)
+        {
+            EndEpisode();
+        }
+       }
+
+    private void OnTriggerEnter(Collider collision)
     {
-        if (collision.collider.tag == "Checkpoint" && collision.collider.name != LastCheckpoint)
+        if (collision.collider.tag == "Checkpoint")
         {
             AddReward(1.0f);
             LastCheckpoint = collision.collider.name;
-            if (collision.collider.name == "Finish")
-            {
-                EndEpisode();
-            }
         }
-        else if (collision.collider.tag == "Wall")
+        else if (collision.collider.name == LastCheckpoint)
         {
-            AddReward(-0.1f);
+            AddReward(-0.2f);
+            EndEpisode();
         }
+        Debug.Log(GetCumulativeReward().ToString("f2"));
+
     }
+
+
 
     private void ResetCharacter()
     {
