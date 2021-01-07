@@ -33,14 +33,17 @@ public class Kart : Agent
 
       public override void OnActionReceived(ActionBuffers actions)
       {
+        
         var input = actions.ContinuousActions;
-        if (input[1] == 1f)
+        Debug.Log(input[1]);
+        if (input[1] > 0f)
         {
-            AddReward(0.01f);
+            AddReward(0.0001f);
         }
-        if (input[1] == -1f)
+        if (input[1] < 0f)
         {
-            AddReward(-0.1f);
+
+            AddReward(-0.01f);
         }
 
         _kartController.ApplyAcceleration(input[1]);
@@ -56,10 +59,14 @@ public class Kart : Agent
         if (Input.GetKey(KeyCode.UpArrow))
         {
             action[1] = 1f;//
+
+
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             action[1] = -1f;//
+
+
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -81,9 +88,7 @@ public class Kart : Agent
     }
 
     private void OnTriggerEnter(Collider collision)
-    {
-        //AddReward(0.0001f);
-        
+    {        
         if (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3)
         {
             AddReward(-1f);
@@ -95,7 +100,6 @@ public class Kart : Agent
             LastCheckpoint2 = LastCheckpoint;
             LastCheckpoint = collision.name;
         }
-        Debug.Log(GetCumulativeReward().ToString("f2"));
     }
 
     /*private void OnCollisionEnter(Collider collision)
