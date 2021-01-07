@@ -18,15 +18,16 @@ public class Kart : Agent
     public override void Initialize()
    {  
         _kartController = GetComponent<KartController>();
-        LastCheckpoint = "Checkpoint 1";
-        LastCheckpoint2 = "Finish";
-        LastCheckpoint3 = "Checkpoint 1 (18)";
+
     }
    
 
    public override void OnEpisodeBegin()
    {
-        //ResetCharacter();
+        ResetKart();
+        LastCheckpoint = "Checkpoint 1";
+        LastCheckpoint2 = "Finish";
+        LastCheckpoint3 = "Checkpoint 1 (18)";
 
 
 
@@ -126,9 +127,9 @@ public class Kart : Agent
     }
 
 
-    private void ResetCharacter()
+    private void ResetKart()
     {
-        this.transform.TransformPoint(new Vector3(ResetPoint.position.x, ResetPoint.position.y, ResetPoint.position.z));
+        Component.rigidbody.position = new Vector3(ResetPoint.position.x, ResetPoint.position.y, ResetPoint.position.z);
     }
 
 
