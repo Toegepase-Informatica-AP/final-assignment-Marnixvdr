@@ -4045,7 +4045,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3137537920686974950}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.11, y: 2.93, z: -25.8}
+  m_LocalPosition: {x: -12.11, y: 2.93, z: -26.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3137537922053193629}
@@ -4167,7 +4167,7 @@ PrefabInstance:
     - target: {fileID: 3655851354191241970, guid: 4ee57639e058ed04299d67351fd4dc95,
         type: 3}
       propertyPath: m_MaxRayDegrees
-      value: 132
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 3655851354191241970, guid: 4ee57639e058ed04299d67351fd4dc95,
         type: 3}

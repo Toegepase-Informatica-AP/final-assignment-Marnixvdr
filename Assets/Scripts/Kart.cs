@@ -10,11 +10,13 @@ public class Kart : Agent
     private string LastCheckpoint2;
     private string LastCheckpoint3;
     public Transform ResetPoint = null;
+    private Rigidbody rigidbody = null;
+
 
 
     public override void Initialize()
    {  
-      _kartController = GetComponent<KartController>();
+        _kartController = GetComponent<KartController>();
         LastCheckpoint = "Checkpoint 1";
         LastCheckpoint2 = "Finish";
         LastCheckpoint3 = "Checkpoint 1 (18)";
@@ -81,16 +83,17 @@ public class Kart : Agent
     private void OnTriggerEnter(Collider collision)
     {
         //AddReward(0.0001f);
-        if (collision.tag == "Checkpoint")
+        
+        if (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3)
+        {
+            AddReward(-1f);
+        }
+        else if (collision.tag == "Checkpoint")
         {
             AddReward(1.0f);
             LastCheckpoint3 = LastCheckpoint2;
             LastCheckpoint2 = LastCheckpoint;
             LastCheckpoint = collision.name;
-        }
-        else if (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3)
-        {
-            AddReward(-1f);
         }
         Debug.Log(GetCumulativeReward().ToString("f2"));
     }
