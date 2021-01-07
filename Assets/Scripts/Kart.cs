@@ -34,7 +34,6 @@ public class Kart : Agent
       {
         
         var input = actions.ContinuousActions;
-        Debug.Log(input[1]);
         if (input[1] > 0f)
         {
             AddReward(0.0002f);
@@ -87,8 +86,13 @@ public class Kart : Agent
     }
 
     private void OnTriggerEnter(Collider collision)
-    {        
-        if (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3)
+    {
+        if (collision.tag == "Wall")
+        {
+            AddReward(-2f);
+            EndEpisode();
+        }
+        if (collision.tag == "Checkpoint" && (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3))
         {
             AddReward(-1f);
             EndEpisode();
@@ -105,12 +109,7 @@ public class Kart : Agent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.tag == "Wall")
-        {
-            AddReward(-.1f);
-            EndEpisode();
 
-        }
     }
 
 
