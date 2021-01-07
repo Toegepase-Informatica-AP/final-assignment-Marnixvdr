@@ -11,6 +11,8 @@ public class Kart : Agent
     private string LastCheckpoint3;
     public Transform ResetPoint = null;
     private Rigidbody rigidbody = null;
+    public float period = 0.0f;
+
 
 
     public override void Initialize()
@@ -24,13 +26,13 @@ public class Kart : Agent
 
    public override void OnEpisodeBegin()
    {
-        ResetCharacter();
+       // ResetCharacter();
 
 
 
     }
 
-      public override void OnActionReceived(ActionBuffers actions)
+    public override void OnActionReceived(ActionBuffers actions)
       {
         
         var input = actions.ContinuousActions;
@@ -87,15 +89,15 @@ public class Kart : Agent
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Wall")
+        /*if (collision.tag == "Wall")
         {
             AddReward(-2f);
             EndEpisode();
-        }
+        }*/
         if (collision.tag == "Checkpoint" && (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3))
         {
             AddReward(-1f);
-            EndEpisode();
+            //EndEpisode();
         }
         else if (collision.tag == "Checkpoint")
         {
@@ -104,6 +106,18 @@ public class Kart : Agent
             LastCheckpoint3 = LastCheckpoint2;
             LastCheckpoint2 = LastCheckpoint;
             LastCheckpoint = collision.name;
+        }
+    }
+
+
+    private void OnTriggerStay(Collider collision)
+    {
+        while (collision.tag == "Wall")
+        {
+            AddReward(-0.01f);
+            yield WaitForSeconds(1f);
+            EndEpisode(); 
+
         }
     }
 
