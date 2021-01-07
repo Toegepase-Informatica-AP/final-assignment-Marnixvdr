@@ -26,7 +26,7 @@ public class Kart : Agent
 
    public override void OnEpisodeBegin()
    {
-       // ResetCharacter();
+        //ResetCharacter();
 
 
 
@@ -89,15 +89,15 @@ public class Kart : Agent
 
     private void OnTriggerEnter(Collider collision)
     {
-        /*if (collision.tag == "Wall")
+        if (collision.tag == "Wall")
         {
-            AddReward(-2f);
+            AddReward(-0.5f);
             EndEpisode();
-        }*/
+        }
         if (collision.tag == "Checkpoint" && (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3))
         {
             AddReward(-1f);
-            //EndEpisode();
+            EndEpisode();
         }
         else if (collision.tag == "Checkpoint")
         {
@@ -110,7 +110,7 @@ public class Kart : Agent
     }
 
 
-    private void OnTriggerStay(Collider collision)
+    /*private void OnTriggerStay(Collider collision)
     {
         if (collision.tag == "Wall")
         {
@@ -118,7 +118,7 @@ public class Kart : Agent
             EndEpisode(); 
 
         }
-    }
+    }*/
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -128,7 +128,7 @@ public class Kart : Agent
 
     private void ResetCharacter()
     {
-        this.transform.position = new Vector3(ResetPoint.position.x, ResetPoint.position.y, ResetPoint.position.z);
+        this.transform.TransformPoint(new Vector3(ResetPoint.position.x, ResetPoint.position.y, ResetPoint.position.z));
     }
 
 
