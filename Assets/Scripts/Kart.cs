@@ -9,8 +9,10 @@ public class Kart : Agent
     private string LastCheckpoint;
     private string LastCheckpoint2;
     private string LastCheckpoint3;
-    public Transform ResetPoint = null;
-    private Rigidbody rigidbody = null;
+    private Rigidbody rigidbody;
+
+
+
     public float period = 0.0f;
 
 
@@ -18,16 +20,17 @@ public class Kart : Agent
     public override void Initialize()
    {  
         _kartController = GetComponent<KartController>();
+        LastCheckpoint = "Checkpoint 1";
+        LastCheckpoint2 = "Finish";
+        LastCheckpoint3 = "Checkpoint 1 (18)";
 
     }
    
 
    public override void OnEpisodeBegin()
    {
-        ResetKart();
-        LastCheckpoint = "Checkpoint 1";
-        LastCheckpoint2 = "Finish";
-        LastCheckpoint3 = "Checkpoint 1 (18)";
+        //KartReset();
+
 
 
 
@@ -92,13 +95,13 @@ public class Kart : Agent
     {
         if (collision.tag == "Wall")
         {
-            AddReward(-0.5f);
-            EndEpisode();
+            AddReward(-1f);
+            //EndEpisode();
         }
         if (collision.tag == "Checkpoint" && (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3))
         {
             AddReward(-1f);
-            EndEpisode();
+            //EndEpisode();
         }
         else if (collision.tag == "Checkpoint")
         {
@@ -110,27 +113,10 @@ public class Kart : Agent
         }
     }
 
-
-    /*private void OnTriggerStay(Collider collision)
+    private void KartReset()
     {
-        if (collision.tag == "Wall")
-        {
-            AddReward(-0.0000000000000000000000000000001f);
-            EndEpisode(); 
-
-        }
-    }*/
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
+        GameObject completeKart = GameObject.Find("Kart Agent");
+        GameObject resetPoint = GameObject.Find("Reset");
+        this.gameObject.transform.position = resetPoint.transform.position;
     }
-
-
-    private void ResetKart()
-    {
-        Component.rigidbody.position = new Vector3(ResetPoint.position.x, ResetPoint.position.y, ResetPoint.position.z);
-    }
-
-
 }
