@@ -2,17 +2,17 @@
     "KartAgent": {
         "checkpoints": [
             {
-                "steps": 12096,
-                "file_path": "results\\test5\\KartAgent\\KartAgent-12096.onnx",
+                "steps": 4160,
+                "file_path": "results\\test5\\KartAgent\\KartAgent-4160.onnx",
                 "reward": null,
-                "creation_time": 1609978182.4066496
+                "creation_time": 1609978987.731004
             }
         ],
         "final_checkpoint": {
-            "steps": 12096,
+            "steps": 4160,
             "file_path": "results\\test5\\KartAgent.onnx",
             "reward": null,
-            "creation_time": 1609978182.4066496
+            "creation_time": 1609978987.731004
         }
     },
     "metadata": {
