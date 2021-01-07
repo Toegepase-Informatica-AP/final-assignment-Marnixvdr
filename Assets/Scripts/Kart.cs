@@ -6,12 +6,11 @@ public class Kart : Agent
 {
 
    private KartController _kartController;
-   private string LastCheckpoint;
+    private string LastCheckpoint;
     private string LastCheckpoint2;
     private string LastCheckpoint3;
     public Transform ResetPoint = null;
     private Rigidbody rigidbody = null;
-
 
 
     public override void Initialize()
@@ -38,12 +37,12 @@ public class Kart : Agent
         Debug.Log(input[1]);
         if (input[1] > 0f)
         {
-            AddReward(0.0001f);
+            AddReward(0.0002f);
         }
         if (input[1] < 0f)
         {
 
-            AddReward(-0.01f);
+            AddReward(-0.0001f);
         }
 
         _kartController.ApplyAcceleration(input[1]);
@@ -96,6 +95,7 @@ public class Kart : Agent
         else if (collision.tag == "Checkpoint")
         {
             AddReward(1.0f);
+
             LastCheckpoint3 = LastCheckpoint2;
             LastCheckpoint2 = LastCheckpoint;
             LastCheckpoint = collision.name;

@@ -4156,6 +4156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3655851354191241970, guid: 4ee57639e058ed04299d67351fd4dc95,
         type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655851354191241970, guid: 4ee57639e058ed04299d67351fd4dc95,
+        type: 3}
       propertyPath: m_StartVerticalOffset
       value: 0
       objectReference: {fileID: 0}
@@ -4173,6 +4178,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SphereCastRadius
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3655851354191241970, guid: 4ee57639e058ed04299d67351fd4dc95,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Checkpoint
       objectReference: {fileID: 0}
     - target: {fileID: 4702329249484720488, guid: 4ee57639e058ed04299d67351fd4dc95,
         type: 3}
@@ -4237,7 +4247,7 @@ PrefabInstance:
     - target: {fileID: 4702329249484720497, guid: 4ee57639e058ed04299d67351fd4dc95,
         type: 3}
       propertyPath: MaxStep
-      value: 0
+      value: 5000
       objectReference: {fileID: 0}
     - target: {fileID: 4702329249484720502, guid: 4ee57639e058ed04299d67351fd4dc95,
         type: 3}
