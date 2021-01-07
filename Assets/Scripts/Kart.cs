@@ -112,10 +112,9 @@ public class Kart : Agent
 
     private void OnTriggerStay(Collider collision)
     {
-        while (collision.tag == "Wall")
+        if (collision.tag == "Wall")
         {
-            AddReward(-0.01f);
-            yield WaitForSeconds(1f);
+            AddReward(-0.0000000000000000000000000000001f);
             EndEpisode(); 
 
         }
