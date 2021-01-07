@@ -91,6 +91,7 @@ public class Kart : Agent
         if (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3)
         {
             AddReward(-1f);
+            EndEpisode();
         }
         else if (collision.tag == "Checkpoint")
         {
@@ -102,22 +103,15 @@ public class Kart : Agent
         }
     }
 
-    /*private void OnCollisionEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        AddReward(0.0001f);
-        if (collision.transform.CompareTag("Checkpoint"))
+        if (collision.collider.tag == "Wall")
         {
-            AddReward(1.0f);
-            LastCheckpoint = collision.name;
-        }
-        else if (collision.transform.CompareTag(LastCheckpoint))
-        {
-            //AddReward(-1f);
+            AddReward(-.1f);
             EndEpisode();
-        }
-        Debug.Log(GetCumulativeReward().ToString("f2"));
 
-    }*/
+        }
+    }
 
 
     private void ResetCharacter()
