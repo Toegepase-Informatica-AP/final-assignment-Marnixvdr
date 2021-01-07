@@ -13,20 +13,33 @@ public class Kart : Agent
 
 
     public override void Initialize()
-   {
+   {  
       _kartController = GetComponent<KartController>();
-   }
+        LastCheckpoint = "Checkpoint 1";
+        LastCheckpoint2 = "Finish";
+        LastCheckpoint3 = "Checkpoint 1 (18)";
+    }
    
 
    public override void OnEpisodeBegin()
    {
         ResetCharacter();
 
+
+
     }
 
       public override void OnActionReceived(ActionBuffers actions)
       {
         var input = actions.ContinuousActions;
+        if (input[1] == 1f)
+        {
+            AddReward(0.1f);
+        }
+        if (input[1] == -1f)
+        {
+            AddReward(-1f);
+        }
 
         _kartController.ApplyAcceleration(input[1]);
         _kartController.Steer(input[0]);
@@ -41,13 +54,10 @@ public class Kart : Agent
         if (Input.GetKey(KeyCode.UpArrow))
         {
             action[1] = 1f;//
-            AddReward(0.001f);
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             action[1] = -1f;//
-            AddReward(-0.01f);
-
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -74,12 +84,13 @@ public class Kart : Agent
         if (collision.tag == "Checkpoint")
         {
             AddReward(1.0f);
+            LastCheckpoint3 = LastCheckpoint2;
+            LastCheckpoint2 = LastCheckpoint;
             LastCheckpoint = collision.name;
         }
-        else if (collision.name == LastCheckpoint)
+        else if (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3)
         {
             AddReward(-1f);
-            EndEpisode();
         }
         Debug.Log(GetCumulativeReward().ToString("f2"));
     }
