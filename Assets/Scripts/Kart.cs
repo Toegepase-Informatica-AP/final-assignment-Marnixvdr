@@ -100,54 +100,23 @@ public class Kart : Agent
             action[0] = 1f;
 
         }
-
-
-        //action[1] = Input.GetKey(KeyCode.W) ? 1f : 0f;
-
-        /*if (_kartController.currentSpeed > 0f || _kartController.speed > 0f)
-        {
-            EndEpisode();
-        }*/
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.tag == "Wall")
+        if (collision.tag == "Checkpoint")
         {
-            AddReward(-0.5f);
-            EndEpisode();
+            AddReward(1.0f);
         }
-        if (collision.tag == "Checkpoint" && (collision.name == LastCheckpoint || collision.name == LastCheckpoint2 || collision.name == LastCheckpoint3))
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.tag == "Wall")
         {
             AddReward(-1f);
             EndEpisode();
         }
-        else if (collision.tag == "Checkpoint")
-        {
-            AddReward(1.0f);
-
-            LastCheckpoint3 = LastCheckpoint2;
-            LastCheckpoint2 = LastCheckpoint;
-            LastCheckpoint = collision.name;
-        }
     }
-
-
-    /*private void OnTriggerStay(Collider collision)
-    {
-        if (collision.tag == "Wall")
-        {
-            AddReward(-0.0000000000000000000000000000001f);
-            EndEpisode(); 
-
-        }
-    }*/
-
-    private void OnCollisionEnter(Collision collision)
-    {
-
-    }
-
-
-
 }
