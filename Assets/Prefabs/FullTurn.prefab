@@ -640,6 +640,7 @@ GameObject:
   - component: {fileID: 6799043082407110139}
   - component: {fileID: 7634962823054682718}
   - component: {fileID: 5625032724057955988}
+  - component: {fileID: 8875047060019855962}
   m_Layer: 0
   m_Name: roadStraightLong
   m_TagString: Untagged
@@ -710,6 +711,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &8875047060019855962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6129642108572909377}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.000002, y: 0.2, z: 20.000004}
+  m_Center: {x: 5.000001, y: 0.1, z: 10.000002}
 --- !u!1 &6550069255653101863
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,6 +735,7 @@ GameObject:
   - component: {fileID: 5885454727392086941}
   - component: {fileID: 7350594158237991992}
   - component: {fileID: 4748616142623781106}
+  - component: {fileID: 3267538092188451099}
   m_Layer: 0
   m_Name: roadCornerSmallSquare
   m_TagString: Untagged
@@ -791,6 +806,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &3267538092188451099
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6550069255653101863}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.2, z: 10}
+  m_Center: {x: 5, y: 0.1, z: 5}
 --- !u!1 &6711189891251427311
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,6 +1155,7 @@ GameObject:
   - component: {fileID: 7993298893628196274}
   - component: {fileID: 6431770747948255767}
   - component: {fileID: 9126203946554408669}
+  - component: {fileID: 4792740160072774473}
   m_Layer: 0
   m_Name: roadStraightLong
   m_TagString: Untagged
@@ -1197,6 +1226,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &4792740160072774473
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7324601573144469256}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 0.2, z: 20}
+  m_Center: {x: 5, y: 0.1, z: 10}
 --- !u!1 &7599396944528535010
 GameObject:
   m_ObjectHideFlags: 0

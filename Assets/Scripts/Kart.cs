@@ -38,6 +38,7 @@ public class Kart : Agent
     private void Reset()
     {
        rBody.velocity = Vector3.zero;
+       rBody.angularVelocity = Vector3.zero;
        transform.position = startingPosition;
         rBody.transform.rotation = startingRotation;
         OnReset?.Invoke();

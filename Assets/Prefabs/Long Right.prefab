@@ -13,6 +13,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 1.312, z: 1.23}
   m_Center: {x: 5, y: 0.656, z: 0.615}
+--- !u!65 &399402675003308871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2975620385224128330}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.000002, y: 0.2, z: 20.000004}
+  m_Center: {x: 5.000001, y: 0.1, z: 10.000002}
 --- !u!65 &648828669686310634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26,19 +39,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 10, y: 1.312, z: 1.23}
   m_Center: {x: 5, y: 0.656, z: 0.615}
---- !u!65 &9111213857789965553
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5562274541931316300}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 10, y: 1.312, z: 1.23}
-  m_Center: {x: 5, y: 0.656, z: 0.615}
 --- !u!65 &6083493534025789558
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46,6 +46,19 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4863988694220115797}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 1.312, z: 1.23}
+  m_Center: {x: 5, y: 0.656, z: 0.615}
+--- !u!65 &9111213857789965553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562274541931316300}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -319,6 +332,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2da7e7033ff97684cbe6a0cd803a8cb0, type: 3}
+--- !u!1 &2975620385224128330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2da7e7033ff97684cbe6a0cd803a8cb0,
+    type: 3}
+  m_PrefabInstance: {fileID: 2705237483074669083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2450053120714190320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2da7e7033ff97684cbe6a0cd803a8cb0,
