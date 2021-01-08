@@ -22,8 +22,7 @@ public class Kart : Agent
     public GameObject something;
     public float period = 0.0f;
     public event Action OnReset;
-
-
+    
 
     public override void Initialize()
    {
@@ -57,11 +56,12 @@ public class Kart : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
       {
-        
+        var script = GetComponent<newMovement>();
+        var speed = script.currentSpeed;
         var input = actions.ContinuousActions;
         if (input[1] > 0f)
         {
-            AddReward(0.0002f);
+            AddReward(0.0002f * speed);
         }
         if (input[1] < 0f)
         {
