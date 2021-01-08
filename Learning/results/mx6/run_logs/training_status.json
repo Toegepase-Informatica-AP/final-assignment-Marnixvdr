@@ -1,0 +1,48 @@
+{
+    "KartAgent": {
+        "checkpoints": [
+            {
+                "steps": 1749971,
+                "file_path": "results\\mx6\\KartAgent\\KartAgent-1749971.onnx",
+                "reward": 0.2754407883906851,
+                "creation_time": 1610114947.2003455
+            },
+            {
+                "steps": 1799979,
+                "file_path": "results\\mx6\\KartAgent\\KartAgent-1799979.onnx",
+                "reward": 0.19329415147121137,
+                "creation_time": 1610115238.1277943
+            },
+            {
+                "steps": 1849967,
+                "file_path": "results\\mx6\\KartAgent\\KartAgent-1849967.onnx",
+                "reward": 0.28460356034338474,
+                "creation_time": 1610115549.1770031
+            },
+            {
+                "steps": 1899982,
+                "file_path": "results\\mx6\\KartAgent\\KartAgent-1899982.onnx",
+                "reward": 0.16483370108263834,
+                "creation_time": 1610115840.3519828
+            },
+            {
+                "steps": 1916387,
+                "file_path": "results\\mx6\\KartAgent\\KartAgent-1916387.onnx",
+                "reward": null,
+                "creation_time": 1610115924.9584322
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1916387,
+            "file_path": "results\\mx6\\KartAgent.onnx",
+            "reward": null,
+            "creation_time": 1610115924.9584322
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.2.0",
+        "mlagents_version": "0.22.0",
+        "torch_version": "1.7.0",
+        "tensorflow_version": "2.3.1"
+    }
+}

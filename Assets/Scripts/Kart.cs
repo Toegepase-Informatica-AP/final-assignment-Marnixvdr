@@ -6,6 +6,8 @@ using Unity.MLAgents.Actuators;
 using Unity.MLAgents.Sensors;
 using UnityEngine;
 
+
+
 public class Kart : Agent
 {
 
@@ -17,6 +19,7 @@ public class Kart : Agent
     private Rigidbody rBody;
     private Vector3 startingPosition;
     private Quaternion startingRotation;
+
 
 
     public GameObject something;
