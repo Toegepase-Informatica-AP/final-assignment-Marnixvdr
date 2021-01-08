@@ -1,0 +1,42 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1610071583",
+        "python_version": "3.8.6 (tags/v3.8.6:db45529, Sep 23 2020, 15:52:53) [MSC v.1927 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\VandeRyckMarnixstude\\AppData\\Local\\Programs\\Python\\Python38\\Scripts\\mlagents-learn KartAIcing.yml --run-id t1",
+        "mlagents_version": "0.22.0",
+        "mlagents_envs_version": "0.22.0",
+        "communication_protocol_version": "1.2.0",
+        "pytorch_version": "1.7.0",
+        "numpy_version": "1.18.5",
+        "end_time_seconds": "1610071647"
+    },
+    "total": 64.2450417,
+    "count": 1,
+    "self": 0.4404578999999984,
+    "children": {
+        "run_training.setup": {
+            "total": 0.035729599999999806,
+            "count": 1,
+            "self": 0.035729599999999806
+        },
+        "TrainerController.start_learning": {
+            "total": 63.7688542,
+            "count": 1,
+            "self": 0.0017999000000017418,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 63.7667211,
+                    "count": 1,
+                    "self": 63.7667211
+                },
+                "TrainerController._save_models": {
+                    "total": 0.00033320000000003347,
+                    "count": 1,
+                    "self": 0.00033320000000003347
+                }
+            }
+        }
+    }
+}
