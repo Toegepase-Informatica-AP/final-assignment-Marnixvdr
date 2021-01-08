@@ -61,12 +61,12 @@ public class Kart : Agent
         var input = actions.ContinuousActions;
         if (input[1] > 0f)
         {
-            AddReward(0.0002f * speed);
+            AddReward(0.003f * speed);
         }
         if (input[1] < 0f)
         {
 
-            AddReward(-0.0001f);
+            AddReward(-0.03f);
         }
 
         _kartController.ApplyAcceleration(input[1]);
