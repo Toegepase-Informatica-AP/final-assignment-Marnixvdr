@@ -17,7 +17,7 @@ public class newMovement : MonoBehaviour
     public float rayDistance = 1f;
     [SerializeField]
     [Range(-1f,1f)]
-    public float currentSpeed;
+    private float currentSpeed;
     public LayerMask layerMask;
 
     void Start()

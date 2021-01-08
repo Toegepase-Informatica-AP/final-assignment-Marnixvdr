@@ -829,17 +829,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1312420711592672899, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 1796959878057272010, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 2312447079298398330, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 8915933835222061786, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 4211495878364047788, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 4603786089641599210, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 6181412282929463012, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 2739361420012577064, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 888614789727856897, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
-    - {fileID: 8409852686235773162, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52fc8f95c8e575546831c9236f97fbb1, type: 3}
 --- !u!1 &1750896662518203143 stripped
 GameObject:
