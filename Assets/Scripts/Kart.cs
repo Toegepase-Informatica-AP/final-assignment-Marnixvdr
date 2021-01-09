@@ -72,7 +72,7 @@ public class Kart : Agent
         if (input[1] < 0f)
         {
 
-            AddReward(-0.003f);
+            AddReward(-0.00001f);
         }
 
         _kartController.ApplyAcceleration(input[1]);
