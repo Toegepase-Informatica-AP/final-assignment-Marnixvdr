@@ -2,41 +2,41 @@
     "KartAgent": {
         "checkpoints": [
             {
-                "steps": 4849944,
-                "file_path": "results\\mx11\\KartAgent\\KartAgent-4849944.onnx",
-                "reward": 3.346583121589252,
-                "creation_time": 1610216169.9749012
+                "steps": 15149988,
+                "file_path": "results\\mx11\\KartAgent\\KartAgent-15149988.onnx",
+                "reward": 16.016427044252243,
+                "creation_time": 1610273277.5175085
             },
             {
-                "steps": 4899978,
-                "file_path": "results\\mx11\\KartAgent\\KartAgent-4899978.onnx",
-                "reward": 3.884762058655421,
-                "creation_time": 1610216348.0619192
+                "steps": 15199945,
+                "file_path": "results\\mx11\\KartAgent\\KartAgent-15199945.onnx",
+                "reward": 25.153044715407304,
+                "creation_time": 1610273452.849441
             },
             {
-                "steps": 4949983,
-                "file_path": "results\\mx11\\KartAgent\\KartAgent-4949983.onnx",
-                "reward": 3.915369348866599,
-                "creation_time": 1610216524.5553334
+                "steps": 15249970,
+                "file_path": "results\\mx11\\KartAgent\\KartAgent-15249970.onnx",
+                "reward": 6.873668925658421,
+                "creation_time": 1610273627.6467066
             },
             {
-                "steps": 4999977,
-                "file_path": "results\\mx11\\KartAgent\\KartAgent-4999977.onnx",
-                "reward": 3.9424784779548645,
-                "creation_time": 1610216722.485878
+                "steps": 15299947,
+                "file_path": "results\\mx11\\KartAgent\\KartAgent-15299947.onnx",
+                "reward": 33.65873070526868,
+                "creation_time": 1610273821.1779418
             },
             {
-                "steps": 5040126,
-                "file_path": "results\\mx11\\KartAgent\\KartAgent-5040126.onnx",
+                "steps": 15330632,
+                "file_path": "results\\mx11\\KartAgent\\KartAgent-15330632.onnx",
                 "reward": null,
-                "creation_time": 1610216864.5235865
+                "creation_time": 1610273928.126395
             }
         ],
         "final_checkpoint": {
-            "steps": 5040126,
+            "steps": 15330632,
             "file_path": "results\\mx11\\KartAgent.onnx",
             "reward": null,
-            "creation_time": 1610216864.5235865
+            "creation_time": 1610273928.126395
         }
     },
     "metadata": {

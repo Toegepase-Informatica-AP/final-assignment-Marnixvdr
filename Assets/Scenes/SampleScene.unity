@@ -687,7 +687,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -1522,7 +1522,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -3522,7 +3522,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -4212,7 +4212,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -5339,7 +5339,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -6533,7 +6533,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -6723,7 +6723,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -8620,7 +8620,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -8965,7 +8965,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -9883,7 +9883,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -11381,7 +11381,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -16905,7 +16905,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -17686,7 +17686,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -18870,7 +18870,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
@@ -20036,7 +20036,7 @@ MonoBehaviour:
   agentParameters:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
-  MaxStep: 5000
+  MaxStep: 12000
   ResetPoint: {fileID: 202305382}
   something: {fileID: 468616125}
   period: 0
