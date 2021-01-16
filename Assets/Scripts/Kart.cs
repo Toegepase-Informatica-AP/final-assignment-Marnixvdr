@@ -11,7 +11,7 @@ using UnityEngine;
 public class Kart : Agent
 {
 
-   private newMovement _kartController;
+    private newMovement _kartController;
     private string LastCheckpoint;
     private string LastCheckpoint2;
     private string LastCheckpoint3;
@@ -61,13 +61,13 @@ public class Kart : Agent
 
     public override void OnActionReceived(ActionBuffers actions)
       {
-        var script = GetComponent<newMovement>();
-        var speed = script.currentSpeed;
+        /*var script = GetComponent<newMovement>();
+        public var speed = script.currentSpeed;*/
         
         var input = actions.ContinuousActions;
         if (input[1] > 0f)
         {
-            AddReward(0.003f * speed);
+            AddReward(0.003f /** speed*/);
         }
         if (input[1] < 0f)
         {

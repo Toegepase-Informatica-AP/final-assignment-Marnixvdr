@@ -5,7 +5,7 @@ using Unity.Barracuda;
 using Unity.Mathematics;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))] 
+[RequireComponent(typeof(Rigidbody))]
 public class newMovement : MonoBehaviour
 {
     private Rigidbody body;
@@ -14,11 +14,11 @@ public class newMovement : MonoBehaviour
     public float rotation;
     public float rotationSpeed;
     public bool isRiding;
-    public float rayDistance = 1f;
     [SerializeField]
-    [Range(-1f,1f)]
-    public float currentSpeed;
+    [Range(-1f, 1f)]
+    private float currentSpeed;
     public LayerMask layerMask;
+    public float raydistance = 1f;
 
     void Start()
     {
@@ -33,15 +33,14 @@ public class newMovement : MonoBehaviour
 
         if (isRiding)
         {
-            Debug.DrawRay(transform.position, Vector3.down * rayDistance, Color.green, 1f);
-
-            if(Physics.Raycast(transform.position, Vector3.down, rayDistance, layerMask))
+            if (Physics.Raycast(transform.position, Vector3.down, raydistance, layerMask))
             {
+                Debug.DrawRay(transform.position, Vector3.down * .1f, Color.green, raydistance);
                 transform.Rotate(0, (rotation * currentSpeed) * rotationSpeed * Time.fixedDeltaTime, 0);
                 Vector3 localVelocity = transform.rotation * (Vector3.forward * wheelSpeed);
                 body.velocity = localVelocity;
             }
-            
+
         }
     }
 
@@ -53,14 +52,14 @@ public class newMovement : MonoBehaviour
     private void Update()
     {
         currentSpeed = Mathf.Lerp(currentSpeed, 0, Time.deltaTime);
-/*#if UNITY_EDITOR
+#if UNITY_EDITOR
         rotation = Mathf.Lerp(rotation, 0, Time.deltaTime);
         float LR = Input.GetAxis("Horizontal");
         float FB = Input.GetAxis("Vertical");
 
         currentSpeed += FB * .1f;
         rotation += LR * .1f;
-#endif */
+#endif 
     }
 
     internal void Steer(float newRot)

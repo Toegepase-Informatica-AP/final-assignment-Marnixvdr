@@ -23,6 +23,7 @@ public class SteeringControl : MonoBehaviour
     private Transform lHandParent;
     private bool lHandOnWheel = false;
 
+    public GameObject steer;
     public Transform[] snappoints;
 
     public GameObject kart;
@@ -51,6 +52,11 @@ public class SteeringControl : MonoBehaviour
 
     void FixedUpdate()
     {
+        steer.transform.localPosition = Vector3.zero;
+        float rot = (-rotation * 180) / 2;
+        steer.transform.localRotation = Quaternion.Euler(0, 0, (rot + 360f) % 360);
+        transform.localRotation = Quaternion.identity;
+        transform.localPosition = new Vector3(0, 0.5915f, 0.3159f);
         HandsRelease();
         HandrotationToSteerrotation();
     }
@@ -63,28 +69,29 @@ public class SteeringControl : MonoBehaviour
         {
             // Calcute angle
             Vector3 targetDir = rHand.transform.position - transform.position;
-            float a = (Vector3.Angle(transform.forward, targetDir) - 180) / 180;
+            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 8;
             currentRotation += a;
         }
         else if (lHandOnWheel)
         {
             // Calcute angle
             Vector3 targetDir = lHand.transform.position - transform.position;
-            float a = (Vector3.Angle(transform.forward, targetDir) - 180) / 180;
+            float a = -((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 8;
             currentRotation += a;
-        }else
+        }
+        else
         {
             currentRotation = 0;
         }
 
-        text.text = $"Cur: {(currentRotation * 100)}";
-
         currentRotation = Mathf.Clamp(currentRotation, -1f, 1f);
+        text.text = $"Cur: {(currentRotation)}";
 
-        _movement.Steer(currentRotation);
-        rotation = currentRotation;
-
-        transform.rotation = Quaternion.Euler(0, 0, 180 * currentRotation);
+        if (!(currentRotation > rotation - 0.01f && currentRotation < rotation + 0.01f))
+        {
+            _movement.Steer(currentRotation);
+            rotation = currentRotation;
+        }
     }
 
     private void HandsRelease()
@@ -92,7 +99,7 @@ public class SteeringControl : MonoBehaviour
         if (rHandOnWheel && rightController.TryGetFeatureValue(CommonUsages.grip, out float rtriggerValue) && rtriggerValue <= 0)
         {
             rHand.SetActive(true);
-            if(rHandParent.childCount > 0)
+            if (rHandParent.childCount > 0)
             {
                 for (int i = 0; i < rHandParent.childCount; i++)
                 {
@@ -119,7 +126,7 @@ public class SteeringControl : MonoBehaviour
     {
         if (other.CompareTag("Playerhand"))
         {
-            if(!rHandOnWheel && rightController.TryGetFeatureValue(CommonUsages.grip, out float rtriggerValue) && rtriggerValue > 0)
+            if (!rHandOnWheel && rightController.TryGetFeatureValue(CommonUsages.grip, out float rtriggerValue) && rtriggerValue > 0)
             {
                 PlaceHandOnWheel(ref rHand, ref rHandParent, ref rHandOnWheel);
             }
@@ -137,14 +144,14 @@ public class SteeringControl : MonoBehaviour
 
         foreach (var point in snappoints)
         {
-                var distance = Vector3.Distance(point.position, hand.transform.position);
-                if (distance < shortestdistance)
-                {
-                    shortestdistance = distance;
-                    closestPoint = point;
-                }
+            var distance = Vector3.Distance(point.position, hand.transform.position);
+            if (distance < shortestdistance)
+            {
+                shortestdistance = distance;
+                closestPoint = point;
+            }
         }
-        if(closestPoint.childCount > 0)
+        if (closestPoint.childCount > 0)
         {
             for (int i = 0; i < closestPoint.childCount; i++)
             {
