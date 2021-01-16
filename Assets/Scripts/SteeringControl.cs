@@ -67,14 +67,14 @@ public class SteeringControl : MonoBehaviour
         {
             // Calcute angle
             Vector3 targetDir = rHand.transform.position - transform.position;
-            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 5;
+            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) /12;
             currentRotation += a;
         }
         else if (lHandOnWheel)
         {
             // Calcute angle
             Vector3 targetDir = lHand.transform.position - transform.position;
-            float a = -((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 5;
+            float a = -((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 12;
             currentRotation += a;
         }
         else
