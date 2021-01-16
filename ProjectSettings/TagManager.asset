@@ -9,6 +9,8 @@ TagManager:
   - Checkpoint
   - Car
   - Kart
+  - Finishline
+  - Finishlinetext
   layers:
   - Default
   - TransparentFX
