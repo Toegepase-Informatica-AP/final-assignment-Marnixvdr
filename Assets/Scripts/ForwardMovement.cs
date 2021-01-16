@@ -25,11 +25,11 @@ public class ForwardMovement : MonoBehaviour
 
     void Update()
     {
-        if (inputSource.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonPressed) && buttonPressed)
+        if (inputSource.TryGetFeatureValue(CommonUsages.secondaryButton, out bool buttonPressed) && buttonPressed)
         {
             _movement.ApplyAcceleration(1f);
         }
-        if (inputSource.TryGetFeatureValue(CommonUsages.secondaryButton, out bool buttonPressed2) && buttonPressed2)
+        if (inputSource.TryGetFeatureValue(CommonUsages.primaryButton, out bool buttonPressed2) && buttonPressed2)
         {
             _movement.ApplyAcceleration(-1f);
         }

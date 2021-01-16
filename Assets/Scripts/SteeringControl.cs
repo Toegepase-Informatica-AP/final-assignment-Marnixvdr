@@ -10,8 +10,6 @@ using UnityEngine.XR;
 [RequireComponent(typeof(BoxCollider))]
 public class SteeringControl : MonoBehaviour
 {
-    public TextMeshPro text;
-
     InputDevice leftController;
     InputDevice rightController;
 
@@ -69,14 +67,14 @@ public class SteeringControl : MonoBehaviour
         {
             // Calcute angle
             Vector3 targetDir = rHand.transform.position - transform.position;
-            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 8;
+            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 5;
             currentRotation += a;
         }
         else if (lHandOnWheel)
         {
             // Calcute angle
             Vector3 targetDir = lHand.transform.position - transform.position;
-            float a = -((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 8;
+            float a = -((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 5;
             currentRotation += a;
         }
         else
@@ -85,7 +83,6 @@ public class SteeringControl : MonoBehaviour
         }
 
         currentRotation = Mathf.Clamp(currentRotation, -1f, 1f);
-        text.text = $"Cur: {(currentRotation)}";
 
         if (!(currentRotation > rotation - 0.01f && currentRotation < rotation + 0.01f))
         {
