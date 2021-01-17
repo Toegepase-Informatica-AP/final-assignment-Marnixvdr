@@ -3026,7 +3026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rHand: {fileID: 1926444571}
   lHand: {fileID: 684494582}
-  steer: {fileID: 8517287075468093294}
+  steer: {fileID: 599355518}
   snappoints:
   - {fileID: 2493631382156679628}
   - {fileID: 2493631383030738930}
