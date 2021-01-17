@@ -6,20 +6,28 @@ using UnityEngine;
 public class Environment : MonoBehaviour
 {
     private TextMeshPro scoreBoard;
-    public TextMeshPro countDownTimer;
+    public TextMeshPro countDownTimer; 
 
 
 
-    private Kart kart;
+    public Kart kart1;
+    public Kart kart2;
+    public Kart kart3;
+
 
     void Start()
     {
+        kart1.enabled = false;
         StartCoroutine(Countdown(3));
     }
 
     IEnumerator Countdown(int seconds)
     {
         int count = seconds;
+
+        kart1.enabled = false;
+        kart2.enabled = false;
+        kart3.enabled = false;
 
         while (count >= 0)
         {
@@ -36,18 +44,21 @@ public class Environment : MonoBehaviour
 
     void StartGame()
     {
+        kart1.enabled = true;
+        kart2.enabled = true;
+        kart3.enabled = true;
         countDownTimer.text = "GO";
     }
 
 
     public void OnEnable()
     {
-        kart = transform.GetComponentInChildren<Kart>();
+        kart1 = transform.GetComponentInChildren<Kart>();
         scoreBoard = transform.GetComponentInChildren<TextMeshPro>();
     }
 
     private void FixedUpdate()
     {
-        scoreBoard.text = kart.GetCumulativeReward().ToString("f2");
+        scoreBoard.text = kart1.GetCumulativeReward().ToString("f2");
     }
 }
