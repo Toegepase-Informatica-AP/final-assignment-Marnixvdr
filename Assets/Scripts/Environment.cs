@@ -38,7 +38,7 @@ public class Environment : MonoBehaviour
             count--;
         }
 
-        // count down is finished...
+        // count down is finished...s
         StartGame();
     }
 
