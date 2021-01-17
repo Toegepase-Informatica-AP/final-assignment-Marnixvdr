@@ -47,6 +47,9 @@ public class newMovement : MonoBehaviour
     internal void ApplyAcceleration(float v)
     {
         currentSpeed += v * .1f;
+        /*Vector3 wheelspin = new Vector3(0, 0, 30f);
+        frontWheels.transform.Rotate(wheelspin);
+        backWheels.transform.Rotate(wheelspin);*/
     }
 
     private void Update()
