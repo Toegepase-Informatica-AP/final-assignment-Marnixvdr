@@ -54,7 +54,7 @@ public class SteeringControl : MonoBehaviour
         float rot = (-rotation * 180) / 2;
         steer.transform.localRotation = Quaternion.Euler(0, 0, (rot + 360f) % 360);
         transform.localRotation = Quaternion.identity;
-        transform.localPosition = new Vector3(0.047f, 0.75f, 0.23f);
+        transform.localPosition = new Vector3(0.041f, 0.76f, 0.23f);
         HandsRelease();
         HandrotationToSteerrotation();
     }
@@ -63,18 +63,23 @@ public class SteeringControl : MonoBehaviour
     {
         float currentRotation = rotation;
 
-        if (rHandOnWheel)
+        /*if (rHandOnWheel && lHandOnWheel)
         {
-            // Calcute angle
             Vector3 targetDir = rHand.transform.position - transform.position;
-            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 7;
+            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 6;
+            currentRotation += a;
+        }
+        else*/
+        if(rHandOnWheel)
+        {
+            Vector3 targetDir = rHand.transform.position - transform.position;
+            float a = ((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 6;
             currentRotation += a;
         }
         else if (lHandOnWheel)
         {
-            // Calcute angle
             Vector3 targetDir = lHand.transform.position - transform.position;
-            float a = -((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 7;
+            float a = -((Vector3.Angle(transform.up, targetDir) - 90) / 180) / 6;
             currentRotation += a;
         }
         else
